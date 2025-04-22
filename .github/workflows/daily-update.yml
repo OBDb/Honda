@@ -84,6 +84,7 @@ jobs:
       - name: Format signalsets
         id: format_signalsets
         run: |
+          mkdir -p signalsets/v3
           cp build/merged_signalset.json signalsets/v3/default.json
           find signalsets/v3 -type f -exec python3 .schemas/cli.py '{}' --output '{}' \;
 
