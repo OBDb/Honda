@@ -99,12 +99,19 @@ jobs:
       - name: Check for changes in data
         id: check_changes
         run: |
-          # Check if there are changes to commit
-          if git diff --quiet signalsets/v3/default.json; then
-            echo "No changes detected in signalsets/v3/default.json"
-            echo "changed=false" >> $GITHUB_OUTPUT
+          # Check if the file exists already
+          if [ -f signalsets/v3/default.json ]; then
+            # File exists, check for changes
+            if git diff --quiet signalsets/v3/default.json; then
+              echo "No changes detected in signalsets/v3/default.json"
+              echo "changed=false" >> $GITHUB_OUTPUT
+            else
+              echo "Changes detected in signalsets/v3/default.json"
+              echo "changed=true" >> $GITHUB_OUTPUT
+            fi
           else
-            echo "Changes detected in signalsets/v3/default.json"
+            # File is new
+            echo "File signalsets/v3/default.json is newly created"
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
