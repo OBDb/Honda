@@ -13,7 +13,7 @@ permissions:
 
 # Make prefixes for this repo
 env:
-  FILTER_ARGS: --filter-prefix=Acura- --filter-prefix=Honda-
+  FILTER_ARGS: --filter-prefix=Honda- --filter-prefix=Acura-
   SIGNAL_PREFIX: HONDA
 
 concurrency:
