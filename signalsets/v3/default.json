@@ -17,7 +17,8 @@
   ]},
 { "hdr": "DA60", "fcm1": true, "dbg": true, "cmd": {"22": "7028"}, "freq": 30,
   "signals": [
-    {"id": "HONDA_AAT", "path": "Climate", "fmt": {"bix": 136, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Outside air temperature"}
+    {"id": "HONDA_FUEL_LEVEL", "path": "Fuel",    "fmt": {"bix": 112, "len": 16, "max": 100,                         "unit": "liters"  }, "name": "Fuel level"},
+    {"id": "HONDA_AAT",        "path": "Climate", "fmt": {"bix": 136, "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Outside air temperature"}
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"01": "05"}, "freq": 5,
   "signals": [
