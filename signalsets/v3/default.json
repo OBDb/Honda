@@ -22,8 +22,7 @@
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"01": "05"}, "freq": 5,
   "signals": [
-    {"id": "HONDA_ECT", "path": "Engine", "fmt": {           "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature"},
-    {"id": "HONDA_FLI", "path": "Fuel",   "fmt": {"bix": 24, "len": 8, "max": 100,                         "unit": "percent" }, "name": "Fuel level"}
+    {"id": "HONDA_ECT", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature"}
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"22": "2615"}, "freq": 1,
   "signals": [
