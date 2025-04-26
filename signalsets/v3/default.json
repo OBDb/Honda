@@ -17,8 +17,11 @@
   ]},
 { "hdr": "DA60", "fcm1": true, "dbg": true, "cmd": {"22": "7028"}, "freq": 30,
   "signals": [
-    {"id": "HONDA_FLV", "path": "Fuel",    "fmt": {"bix": 112, "len": 16, "max": 100,                         "unit": "liters"  }, "name": "Fuel level",              "suggestedMetric": "fuelTankLevel"},
-    {"id": "HONDA_AAT", "path": "Climate", "fmt": {"bix": 136, "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Outside air temperature"}
+    {"id": "HONDA_AAT", "path": "Climate", "fmt": {"bix": 136, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Outside air temperature"}
+  ]},
+{ "hdr": "DA60", "dbg": true, "cmd": {"22": "7029"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_FLV", "path": "Fuel", "fmt": {"bix": 112, "len": 16, "max": 100, "unit": "liters" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"01": "05"}, "freq": 5,
   "signals": [
@@ -26,8 +29,14 @@
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"22": "2615"}, "freq": 1,
   "signals": [
-    {"id": "HONDA_ATF",        "path": "Transmission", "fmt": {"bix": 112, "len": 8, "max": 200, "min": -50, "add": -40, "unit": "celsius" }, "name": "ATF temperature"},
-    {"id": "HONDA_ACTIVE_CYL", "path": "Engine",       "fmt": {"bix": 400, "len": 8, "max": 6,                           "unit": "scalar"  }, "name": "Active cylinders"},
+    {"id": "HONDA_ACTIVE_CYL", "path": "Engine", "fmt": {"bix": 400, "len": 8, "max": 6, "unit": "scalar" }, "name": "Active cylinders"}
+  ]},
+{ "hdr": "DB33", "dbg": true, "cmd": {"22": "3083"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_ATF", "path": "Transmission", "fmt": {"bix": 112, "len": 8, "max": 200, "min": -50, "add": -40, "unit": "celsius" }, "name": "ATF temperature"}
+  ]},
+{ "hdr": "DB33", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.75,
+  "signals": [
     {"id": "HONDA_GEAR", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
           "1":  { "description": "Drive 1", "value": "D1" },
