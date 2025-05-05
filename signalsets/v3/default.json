@@ -9,7 +9,7 @@
   ]},
 { "hdr": "DA0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 2,
   "signals": [
-    {"id": "HONDA_GEAR", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"bix": 352, "len": 8, "map": {
+    {"id": "HONDA_GEAR_V2", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"bix": 352, "len": 8, "map": {
           "1": { "description": "First gear",  "value": "1" },
           "2": { "description": "Second gear", "value": "2" },
           "3": { "description": "Third gear",  "value": "3" },
@@ -62,7 +62,7 @@
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.75,
   "signals": [
-    {"id": "HONDA_GEAR", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
+    {"id": "HONDA_GEAR_V3", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
           "1":  { "description": "Drive 1", "value": "D1" },
           "2":  { "description": "Drive 2", "value": "D2" },
