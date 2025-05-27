@@ -1,9 +1,4 @@
 { "commands": [
-{ "hdr": "DA0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
-  "signals": [
-    {"id": "HONDA_GEAR_V2", "path": "Transmission", "fmt": {"bix": 352, "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear v2"},
-    {"id": "HONDA_GEAR_V3", "path": "Transmission", "fmt": {"bix": 368, "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear v3"}
-  ]},
 { "hdr": "DA10", "fcm1": true, "dbg": true, "cmd": {"22": "2660"}, "freq": 30,
   "signals": [
     {"id": "HONDA_ODO",   "path": "Trips",  "fmt": {"bix": 344, "len": 24, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer",                "suggestedMetric": "odometer"},
