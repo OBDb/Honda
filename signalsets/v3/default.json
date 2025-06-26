@@ -15,7 +15,7 @@
   ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
   "signals": [
-    {"id": "HONDA_AIRGAS_RATIO_V2", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
+    {"id": "HONDA_AIRGAS_RATIO", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
   ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2661"}, "freq": 0.25,
   "signals": [
@@ -35,7 +35,7 @@
   ]},
 { "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
   "signals": [
-    {"id": "HONDA_AIRGAS_RATIO", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
+    {"id": "HONDA_AIRGAS_RATIO_V2", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
   ]},
 { "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
   "signals": [
