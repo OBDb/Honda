@@ -62,7 +62,7 @@
   ]},
 { "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2201"}, "freq": 1,
   "signals": [
-    {"id": "HONDA_ATF_T", "path": "Transmission", "fmt": {"bix": 208, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "ATF temperature"}
+    {"id": "HONDA_ATF_T", "path": "Transmission", "fmt": {"bix": 208, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Automatic transmission fluid temperature"}
   ]},
 { "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2203"}, "freq": 1,
   "signals": [
@@ -78,7 +78,7 @@
   ]},
 { "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.5,
   "signals": [
-    {"id": "HONDA_GEAR_V2", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
+    {"id": "HONDA_GEAR_1E", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
           "1":  { "description": "Drive 1", "value": "D1" },
           "2":  { "description": "Drive 2", "value": "D2" },
