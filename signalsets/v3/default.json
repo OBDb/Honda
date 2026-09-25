@@ -97,7 +97,7 @@
     {"id": "HONDA_AAT_OUT",      "path": "Engine",  "fmt": {"bix": 840,  "len": 8,  "max": 127,    "min": -40,              "sign": true, "unit": "celsius"     }, "name": "Ambient air temperature, outside"},
     {"id": "HONDA_HVB_CAP",      "path": "Battery", "fmt": {"bix": 1336, "len": 16, "max": 655.35,              "div": 100,               "unit": "ampereHours" }, "name": "High voltage battery total capacity"}
   ]},
-{ "hdr": "DA01", "rax": "01", "dbg": true, "cmd": {"22": "202C"}, "freq": 1,
+{ "hdr": "DA01", "rax": "01", "dbg": true, "cmd": {"22": "202C"}, "freq": 5,
   "signals": [
     {"id": "HONDA_HVB_MOD_1A_T", "path": "Battery", "fmt": {"bix": 472,  "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 1A temperature"},
     {"id": "HONDA_HVB_MOD_3A_T", "path": "Battery", "fmt": {"bix": 504,  "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 3A temperature"},
@@ -106,7 +106,7 @@
     {"id": "HONDA_ECT_3",        "path": "Engine",  "fmt": {"bix": 1640, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "Engine coolant temperature sensor 3",        "suggestedMetric": "engineCoolantTemperature"},
     {"id": "HONDA_ECT_4",        "path": "Engine",  "fmt": {"bix": 1656, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "Engine coolant temperature sensor 4",        "suggestedMetric": "engineCoolantTemperature"}
   ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2240"}, "freq": 1,
+{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2240"}, "freq": 30,
   "signals": [
     {"id": "HONDA_BAT_DIST", "path": "Battery", "fmt": {"bix": 80, "len": 32, "max": 250000, "unit": "kilometers" }, "name": "Distance traveled since last charge"}
   ]},
@@ -120,7 +120,7 @@
     {"id": "HONDA_FUEL_AIR_RATIO_PCM", "path": "Fuel",   "fmt": {           "len": 8,  "max": 255,                             "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"},
     {"id": "HONDA_AIRGAS_RATIO_PCM",   "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
   ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
+{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 0.25,
   "signals": [
     {"id": "HONDA_VTEC_VALVE_CTRL_PCM", "path": "Engine",       "fmt": {"bix": 175, "len": 1, "max": 1,   "unit": "offon"  }, "name": "VTEC valve control", "description": "VTEC works by switching between two (or sometimes three) different camshaft profiles by engaging or disengaging a mechanism that locks the valve rocker arms together. When VTEC is OFF, the engine operates using the standard cam profile, which is typically optimized for fuel efficiency and low-end torque. When VTEC is ON, the system switches to a high-performance cam profile that allows the valves to open wider and for a longer duration, enabling better airflow at higher RPMs for increased power."},
     {"id": "HONDA_CURRENT_GEAR_VAR_2",  "path": "Transmission", "fmt": {"bix": 352, "len": 8, "max": 255, "unit": "scalar" }, "name": "Current gear var.2"},
@@ -164,7 +164,7 @@
     {"id": "HONDA_MISFIRE_5_PCM",             "path": "ECU",    "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 5"},
     {"id": "HONDA_MISFIRE_6_PCM",             "path": "ECU",    "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 6"}
   ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2666"}, "freq": 1,
+{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2666"}, "freq": 5,
   "signals": [
     {"id": "HONDA_EOT_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 88,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 3"},
     {"id": "HONDA_EOT_VAR_4_PCM", "path": "Engine", "fmt": {"bix": 112, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 4"}
@@ -220,7 +220,7 @@
     {"id": "HONDA_MISFIRE_5", "path": "ECU",    "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 5"},
     {"id": "HONDA_MISFIRE_6", "path": "ECU",    "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 6"}
   ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2666"}, "freq": 1,
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2666"}, "freq": 5,
   "signals": [
     {"id": "HONDA_EOT_VAR_3", "path": "Engine", "fmt": {"bix": 88,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 3"},
     {"id": "HONDA_EOT_VAR_4", "path": "Engine", "fmt": {"bix": 112, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 4"}
@@ -257,7 +257,7 @@
     {"id": "HONDA_MISFIRE_COUNT_5_VAR_2", "path": "Engine", "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #5, variant 2"},
     {"id": "HONDA_MISFIRE_COUNT_6_VAR_2", "path": "Engine", "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #6, variant 2"}
   ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2666"}, "freq": 1,
+{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2666"}, "freq": 5,
   "signals": [
     {"id": "HONDA_EOT_VAR_1", "path": "Engine", "fmt": {"bix": 88,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 1"},
     {"id": "HONDA_EOT_VAR_2", "path": "Engine", "fmt": {"bix": 112, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 2"}
@@ -271,7 +271,7 @@
     {"id": "HONDA_MISFIRE_COUNT_5_VAR_1", "path": "Engine", "fmt": {"bix": 80, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #5, variant 1"},
     {"id": "HONDA_MISFIRE_COUNT_6_VAR_1", "path": "Engine", "fmt": {"bix": 88, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #6, variant 1"}
   ]},
-{ "hdr": "DA15", "rax": "15", "dbg": true, "cmd": {"22": "2021"}, "freq": 1,
+{ "hdr": "DA15", "rax": "15", "dbg": true, "cmd": {"22": "2021"}, "freq": 5,
   "signals": [
     {"id": "HONDA_CHG_V_IN",  "path": "Battery", "fmt": {"bix": 240, "len": 16, "max": 500, "div": 10, "unit": "volts" }, "name": "Normal charger input voltage"},
     {"id": "HONDA_CHG_V_OUT", "path": "Battery", "fmt": {"bix": 272, "len": 16, "max": 500, "div": 10, "unit": "volts" }, "name": "Normal charger output voltage"}
@@ -375,14 +375,14 @@
     {"id": "HONDA_CEL_MIN_SOC_B", "path": "Battery.Cells", "fmt": {"bix": 600,  "len": 16, "max": 100,    "div": 100, "unit": "percent"     }, "name": "Individual cell min SOC, line B"},
     {"id": "HONDA_HVB_CAP_B",     "path": "Battery.Cells", "fmt": {"bix": 1336, "len": 16, "max": 655.35, "div": 100, "unit": "ampereHours" }, "name": "Battery capacity, line B"}
   ]},
-{ "hdr": "DA16", "rax": "16", "dbg": true, "cmd": {"22": "202C"}, "freq": 1,
+{ "hdr": "DA16", "rax": "16", "dbg": true, "cmd": {"22": "202C"}, "freq": 5,
   "signals": [
     {"id": "HONDA_HVB_MOD_1B_T", "path": "Battery", "fmt": {"bix": 472, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 1B temperature"},
     {"id": "HONDA_HVB_MOD_2A_T", "path": "Battery", "fmt": {"bix": 488, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 2A temperature"},
     {"id": "HONDA_HVB_MOD_3B_T", "path": "Battery", "fmt": {"bix": 504, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 3B temperature"},
     {"id": "HONDA_HVB_MOD_4B_T", "path": "Battery", "fmt": {"bix": 520, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 4B temperature"}
   ]},
-{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2201"}, "freq": 1,
+{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2201"}, "freq": 5,
   "signals": [
     {"id": "HONDA_ATF_T", "path": "Transmission", "fmt": {"bix": 208, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Automatic transmission fluid temperature"}
   ]},
@@ -390,15 +390,15 @@
   "signals": [
     {"id": "HONDA_EOP", "path": "ECU", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Oil pressure"}
   ]},
-{ "hdr": "DA1D", "rax": "1D", "fcm1": true, "dbg": true, "cmd": {"22": "2221"}, "freq": 30,
+{ "hdr": "DA1D", "rax": "1D", "fcm1": true, "dbg": true, "cmd": {"22": "2221"}, "freq": 0.25,
   "signals": [
     {"id": "HONDA_GEAR", "path": "Transmission", "fmt": {"bix": 184, "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
   ]},
-{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2660"}, "freq": 5,
+{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2660"}, "freq": 30,
   "signals": [
     {"id": "HONDA_ODO_V2", "path": "Trips", "fmt": {"bix": 344, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "2201"}, "freq": 1,
+{ "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "2201"}, "freq": 5,
   "signals": [
     {"id": "HONDA_ATF_T_VAR_4", "path": "Engine", "fmt": {"bix": 208, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature, variant 4", "suggestedMetric": "transmissionFluidTemperature"}
   ]},
@@ -408,7 +408,7 @@
   ]},
 { "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.25,
   "signals": [
-    {"id": "HONDA_GEAR_V2", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
+    {"id": "HONDA_GEAR_DA1E", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
           "1":  { "description": "Drive 1", "value": "D1" },
           "2":  { "description": "Drive 2", "value": "D2" },
@@ -424,7 +424,7 @@
         }}
     }
   ]},
-{ "hdr": "DA26", "rax": "26", "dbg": true, "cmd": {"22": "6001"}, "freq": 5,
+{ "hdr": "DA26", "rax": "26", "dbg": true, "cmd": {"22": "6001"}, "freq": 15,
   "signals": [
     {"id": "HONDA_TP_FR", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front right tire pressure",    "suggestedMetric": "frontRightTirePressure"},
     {"id": "HONDA_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front left tire pressure",     "suggestedMetric": "frontLeftTirePressure"},
@@ -435,22 +435,22 @@
     {"id": "HONDA_TT_RR", "path": "Tires", "fmt": {"bix": 208, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear right tire temperature"},
     {"id": "HONDA_TT_RL", "path": "Tires", "fmt": {"bix": 216, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear left tire temperature"}
   ]},
-{ "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4004"}, "freq": 1,
+{ "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4004"}, "freq": 0.25,
   "signals": [
     {"id": "HONDA_BRK_SW", "path": "Electrical", "fmt": {"bix": 127, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake switch"}
   ]},
-{ "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4005"}, "freq": 1,
+{ "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4005"}, "freq": 0.25,
   "signals": [
     {"id": "HONDA_BRK_P", "path": "Electrical", "fmt": {"bix": 56, "len": 16, "max": 120, "add": -25, "unit": "bars" }, "name": "Brake pressure"}
   ]},
-{ "hdr": "DA2A", "rax": "2A", "dbg": true, "cmd": {"22": "4201"}, "freq": 1,
+{ "hdr": "DA2A", "rax": "2A", "dbg": true, "cmd": {"22": "4201"}, "freq": 0.25,
   "signals": [
     {"id": "HONDA_BRK_PED_STK",  "path": "Electrical", "fmt": {"bix": 88,  "len": 16, "max": 50,     "div": 10,  "unit": "millimeters" }, "name": "Brake pedal stroke"},
     {"id": "HONDA_BRK_FLD_P",    "path": "Electrical", "fmt": {"bix": 168, "len": 16, "max": 5,      "div": 100, "unit": "unknown"     }, "name": "Brake fluid pressure"},
     {"id": "HONDA_MSTR_CYL_STK", "path": "Electrical", "fmt": {"bix": 232, "len": 16, "max": 6553.5, "div": 10,  "unit": "millimeters" }, "name": "Master cylinder stroke"},
     {"id": "HONDA_SLV_CYL_STK",  "path": "Electrical", "fmt": {"bix": 248, "len": 16, "max": 6553.5, "div": 10,  "unit": "millimeters" }, "name": "Slave cylinder stroke"}
   ]},
-{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7022"}, "freq": 1,
+{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7022"}, "freq": 30,
   "signals": [
     {"id": "HONDA_ODO_V3", "path": "Trips", "fmt": {"bix": 48, "len": 24, "max": 200000, "unit": "miles" }, "name": "Odometer, variation 3"}
   ]},
@@ -458,11 +458,11 @@
   "signals": [
     {"id": "HONDA_AAT", "path": "Climate", "fmt": {"bix": 136, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Outside air temperature"}
   ]},
-{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7029"}, "freq": 5,
+{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7029"}, "freq": 30,
   "signals": [
     {"id": "HONDA_FLV", "path": "Fuel", "fmt": {"bix": 96, "len": 16, "max": 655, "div": 100, "unit": "liters" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
   ]},
-{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7060"}, "freq": 1,
+{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7060"}, "freq": 30,
   "signals": [
     {"id": "HONDA_MAINT_OIL_FLT",   "path": "Engine", "fmt": {"bix": 112, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, oil & filter"},
     {"id": "HONDA_MAINT_SPARK",     "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, spark plugs & valves"},
