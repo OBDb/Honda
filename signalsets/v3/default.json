@@ -145,9 +145,8 @@
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2662"}, "freq": 0.25,
   "signals": [
-    {"id": "HONDA_KNOCK_CONTROL_PCM", "path": "ECU",    "fmt": {"bix": 80,  "len": 8,  "max": 2,                "mul": 2,   "div": 255,             "unit": "scalar"  }, "name": "Knock control"},
-    {"id": "HONDA_CAT_T_PCM",         "path": "Engine", "fmt": {"bix": 96,  "len": 16, "max": 1500, "min": -40,             "div": 10,  "add": -40, "unit": "celsius" }, "name": "Catalyst temperature"},
-    {"id": "HONDA_VTC_DUTY_PCM",      "path": "Engine", "fmt": {"bix": 224, "len": 8,  "max": 100,              "mul": 100, "div": 255,             "unit": "percent" }, "name": "Variable valve timing duty"}
+    {"id": "HONDA_KNOCK_CONTROL_PCM", "path": "ECU",    "fmt": {"bix": 80,  "len": 8, "max": 2,   "mul": 2,   "div": 255, "unit": "scalar"  }, "name": "Knock control"},
+    {"id": "HONDA_VTC_DUTY_PCM",      "path": "Engine", "fmt": {"bix": 224, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Variable valve timing duty"}
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2663"}, "freq": 1,
   "signals": [
@@ -430,10 +429,10 @@
     {"id": "HONDA_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front left tire pressure",     "suggestedMetric": "frontLeftTirePressure"},
     {"id": "HONDA_TP_RR", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Rear right tire pressure",     "suggestedMetric": "rearRightTirePressure"},
     {"id": "HONDA_TP_RL", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Rear left tire pressure",      "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "HONDA_TT_FR", "path": "Tires", "fmt": {"bix": 192, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front right tire temperature"},
-    {"id": "HONDA_TT_FL", "path": "Tires", "fmt": {"bix": 200, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front left tire temperature"},
-    {"id": "HONDA_TT_RR", "path": "Tires", "fmt": {"bix": 208, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear right tire temperature"},
-    {"id": "HONDA_TT_RL", "path": "Tires", "fmt": {"bix": 216, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear left tire temperature"}
+    {"id": "HONDA_TT_FR", "path": "Tires", "fmt": {"bix": 192, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "HONDA_TT_FL", "path": "Tires", "fmt": {"bix": 200, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "HONDA_TT_RR", "path": "Tires", "fmt": {"bix": 208, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "HONDA_TT_RL", "path": "Tires", "fmt": {"bix": 216, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"}
   ]},
 { "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4004"}, "freq": 0.25,
   "signals": [
