@@ -7,6 +7,7 @@
     { "hdr": "DA1E", "type": "transmission" },
     { "hdr": "DA26", "type": "tpms" },
     { "hdr": "DA28", "type": "abs" },
+    { "hdr": "DA2A", "type": "abs" },
     { "hdr": "DA60", "type": "cluster" }
   ],
   "commands": [
@@ -438,6 +439,18 @@
     {"id": "HONDA_HVB_MOD_3B_T", "path": "Battery", "fmt": {"bix": 504, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 3B temperature"},
     {"id": "HONDA_HVB_MOD_4B_T", "path": "Battery", "fmt": {"bix": 520, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "High voltage battery module 4B temperature"}
   ]},
+{ "hdr": "DA17", "rax": "17", "dbg": true, "cmd": {"22": "2414"}, "freq": 1,
+  "signals": [
+    {"id": "HONDA_HVBAT_C", "path": "Battery", "fmt": { "len": 16, "max": 1000, "min": -1000, "div": 20, "sign": true, "unit": "amps" }, "name": "Traction battery current", "suggestedMetric": "tractionBatteryCurrent", "description": "Signed pack current from the drive-motor/power-electronics controller (negative = charging). Confirmed -22.75 A at a steady 9.22 kW AC charge and +0.9 A accessory draw in Ready. Same register family as Chevy Bolt 7E1 222414."}
+  ]},
+{ "hdr": "DA17", "rax": "17", "dbg": true, "cmd": {"22": "2429"}, "freq": 3600,
+  "signals": [
+    {"id": "HONDA_HVBAT_NOM_V", "path": "Battery", "fmt": { "len": 16, "max": 1023, "div": 64, "unit": "volts" }, "name": "Traction battery nominal voltage", "description": "Constant rated (nominal) pack voltage, 352.1 V on a 2025 LYRIQ - identical while charging at 70% SOC and at rest at 80% SOC, so it is not a live measurement. Duplicates at 2428/242D/2434/2489."}
+  ]},
+{ "hdr": "DA1D", "dbg": true, "cmd": {"22": "33E5"}, "freq": 10,
+  "signals": [
+    {"id": "HONDA_12V_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "12V battery voltage", "suggestedMetric": "starterBatteryVoltage", "description": "12 V system voltage from the Drive Motor Control Module (matches Chevrolet-Equinox-EV DA1D 2233E5). Note: LYRIQ command_support docs list this DID as HV pack voltage - on-vehicle it reads 13.1-13.9 V under DC-DC float and does not track pack voltage."}
+  ]},
 { "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2201"}, "freq": 5,
   "signals": [
     {"id": "HONDA_ATF_T", "path": "Transmission", "fmt": {"bix": 208, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Automatic transmission fluid temperature"}
@@ -499,6 +512,29 @@
     {"id": "HONDA_TT_RR", "path": "Tires", "fmt": {"bix": 208, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
     {"id": "HONDA_TT_RL", "path": "Tires", "fmt": {"bix": 216, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"}
   ]},
+{ "hdr": "DA28", "pri": "14", "fcm1": true, "dbg": true, "cmd": {"22": "4A7A"}, "freq": 0.25,
+  "signals": [
+    {"id": "HONDA_FL_WHEEL_VSS", "path": "Tires", "fmt": {           "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "HONDA_FR_WHEEL_VSS", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "HONDA_RL_WHEEL_VSS", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "HONDA_RR_WHEEL_VSS", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]},
+{ "hdr": "DA28", "pri": "14", "fcm1": true, "dbg": true, "cmd": {"22": "4A7C"}, "freq": 0.25,
+  "signals": [
+    {"id": "HONDA_BP", "path": "Engine", "fmt": { "len": 8, "max": 11700, "min": -13800, "mul": 100, "add": -1000, "sign": true, "unit": "kilopascal" }, "name": "Brake pressure"}
+  ]},
+{ "hdr": "DA28", "pri": "14", "fcm1": true, "dbg": true, "cmd": {"22": "4C2D"}, "freq": 0.1,
+  "signals": [
+    {"id": "HONDA_STEER_ANGLE", "path": "Control", "fmt": { "len": 16, "max": 720.8739, "min": -720.896, "mul": 220, "div": 10000, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+  ]},
+{ "hdr": "DA28", "pri": "14", "fcm1": true, "dbg": true, "cmd": {"22": "4C2F"}, "freq": 0.1,
+  "signals": [
+    {"id": "HONDA_LAT_G", "path": "Orientation", "fmt": { "len": 16, "max": 52, "min": -52, "mul": 15.92796725, "div": 10000, "sign": true, "unit": "gravity" }, "name": "Lateral acceleration"}
+  ]},
+{ "hdr": "DA28", "pri": "14", "fcm1": true, "dbg": true, "cmd": {"22": "4C30"}, "freq": 0.1,
+  "signals": [
+    {"id": "HONDA_LNG_G", "path": "Orientation", "fmt": { "len": 16, "max": 52, "min": -52, "mul": 15.92796725, "div": 10000, "sign": true, "unit": "gravity" }, "name": "Longitudinal acceleration"}
+  ]},
 { "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4004"}, "freq": 0.25,
   "signals": [
     {"id": "HONDA_BRK_SW", "path": "Electrical", "fmt": {"bix": 127, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake switch"}
@@ -513,6 +549,62 @@
     {"id": "HONDA_BRK_FLD_P",    "path": "Electrical", "fmt": {"bix": 168, "len": 16, "max": 5,                      "div": 100,               "unit": "unknown"     }, "name": "Brake fluid pressure"},
     {"id": "HONDA_MSTR_CYL_STK", "path": "Electrical", "fmt": {"bix": 232, "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,  "sign": true, "unit": "millimeters" }, "name": "Master cylinder stroke"},
     {"id": "HONDA_SLV_CYL_STK",  "path": "Electrical", "fmt": {"bix": 248, "len": 16, "max": 6553.5,                 "div": 10,                "unit": "millimeters" }, "name": "Slave cylinder stroke"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "40E5"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_COOL_T1", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery coolant temperature 1"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "40E6"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_COOL_T2", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery coolant temperature 2"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "4124"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_T_B", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery temperature sensor B"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "4127"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_T_A", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery temperature sensor A"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "4149"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_EVSE_PILOT_C", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 10, "unit": "amps" }, "name": "Charge station pilot current", "description": "J1772 pilot-advertised AC current limit. Read 38.8 A on a 9.2 kW EVSE while plugged; snaps to a 10.0 A default when unplugged."}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "416C"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_GRP1_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 100, "unit": "volts" }, "name": "Traction battery group 1 voltage"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "416D"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_GRP2_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 100, "unit": "volts" }, "name": "Traction battery group 2 voltage"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "416E"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_GRP3_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 100, "unit": "volts" }, "name": "Traction battery group 3 voltage", "description": "~51 V battery groups; rise under charge, fall under load, and read 0 with the vehicle off (live measurements behind the contactors)."}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "434F"}, "freq": 5,
+  "signals": [
+    {"id": "HONDA_HVBAT_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Traction battery temperature", "description": "Same encoding as Chevy Bolt 7E4 22434F."}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "448F"}, "freq": 30,
+  "signals": [
+    {"id": "HONDA_ODO_V2", "path": "Trips", "fmt": { "len": 32, "max": 671088, "div": 64, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer", "description": "u32/64 km. Verified against the dash to the mile (2,031,186/64 = 31,737 km = 19,720 mi). 22415B returns the same register."}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "5005"}, "freq": 15,
+  "signals": [
+    {"id": "HONDA_TP_FL_V2", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "5006"}, "freq": 15,
+  "signals": [
+    {"id": "HONDA_TP_FR_V2", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "5007"}, "freq": 15,
+  "signals": [
+    {"id": "HONDA_TP_RR_V2", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
+  ]},
+{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "5008"}, "freq": 15,
+  "signals": [
+    {"id": "HONDA_TP_RL_V2", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"}
   ]},
 { "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7022"}, "freq": 30,
   "signals": [
@@ -538,6 +630,20 @@
     {"id": "HONDA_MAINT_COOL",      "path": "Engine", "fmt": {"bix": 288, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, engine coolant"},
     {"id": "HONDA_MAINT_BRK_FLD",   "path": "Engine", "fmt": {"bix": 320, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, rake fluid"},
     {"id": "HONDA_MAINT_AIR_CLN",   "path": "Engine", "fmt": {"bix": 336, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, air cleaner"}
+  ]},
+{ "hdr": "DACB", "dbg": true, "cmd": {"22": "27C6"}, "freq": 0.5,
+  "signals": [
+    {"id": "HONDA_SOC_HD", "path": "Battery", "fmt": { "len": 16, "max": 100, "mul": 100, "div": 65535, "unit": "percent" }, "name": "State of charge, high resolution", "suggestedMetric": "stateOfCharge", "description": "A high resolution measure of the battery pack's remaining state of charge."}
+  ]},
+{ "hdr": "DACB", "dbg": true, "cmd": {"22": "2AF5"}, "freq": 1,
+  "signals": [
+    {"id": "HONDA_HVBAT_C_V_AVG", "path": "Battery", "fmt": {           "len": 16, "max": 6.55, "div": 10000, "unit": "volts" }, "name": "Cell voltage, average"},
+    {"id": "HONDA_HVBAT_C_V_MIN", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 6.55, "div": 10000, "unit": "volts" }, "name": "Cell voltage, minimum"},
+    {"id": "HONDA_HVBAT_C_V_MAX", "path": "Battery", "fmt": {"bix": 32, "len": 16, "max": 6.55, "div": 10000, "unit": "volts" }, "name": "Cell voltage, maximum"}
+  ]},
+{ "hdr": "DACB", "dbg": true, "cmd": {"22": "2B43"}, "freq": 1,
+  "signals": [
+    {"id": "HONDA_SOC_V2", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
   ]},
 { "hdr": "DBEF", "dbg": true, "cmd": {"22": "2001"}, "freq": 5,
   "signals": [
