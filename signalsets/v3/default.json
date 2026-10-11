@@ -128,9 +128,10 @@
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2611"}, "freq": 1,
   "signals": [
-    {"id": "HONDA_FUEL_AIR_RAT_PCM", "path": "Fuel",   "fmt": {           "len": 8,  "max": 255,                                              "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"},
-    {"id": "HONDA_AIRGAS_RAT_PCM",   "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535,                  "unit": "scalar" }, "name": "Air/gas ratio"},
-    {"id": "HONDA_AIRGAS_RATIO_PCM", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "nullmax": 29.4, "unit": "scalar" }, "name": "Air/gas ratio"}
+    {"id": "HONDA_FUEL_AIR_RAT_PCM",   "path": "Fuel",   "fmt": {           "len": 8,  "max": 255,                             "nullmax": 255,  "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"},
+    {"id": "HONDA_FUEL_AIR_RATIO_PCM", "path": "Fuel",   "fmt": {           "len": 8,  "max": 255,                                              "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"},
+    {"id": "HONDA_AIRGAS_RATIO_PCM",   "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "nullmax": 29.4, "unit": "scalar" }, "name": "Air/gas ratio"},
+    {"id": "HONDA_AIRGAS_RAT_PCM",     "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535,                  "unit": "scalar" }, "name": "Air/gas ratio"}
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 0.25,
   "signals": [
