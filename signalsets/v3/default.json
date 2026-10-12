@@ -3,6 +3,8 @@
     { "hdr": "DA0E", "type": "engine" },
     { "hdr": "DA10", "type": "engine" },
     { "hdr": "DA11", "type": "engine" },
+    { "hdr": "DA15", "type": "charger" },
+    { "hdr": "DA16", "type": "battery" },
     { "hdr": "DA1D", "type": "transmission" },
     { "hdr": "DA1E", "type": "transmission" },
     { "hdr": "DA26", "type": "tpms" },
