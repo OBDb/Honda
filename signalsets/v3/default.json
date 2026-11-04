@@ -312,6 +312,10 @@
   "signals": [
     {"id": "HONDA_RAW_10_2514", "path": "ECU", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw first byte of 10 22 2514", "description": "Captured to learn this reply's layout. Its listed contents: Oil Dilution Estimate Integrated Value Clear."}
   ]},
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2516"}, "freq": 1,
+  "signals": [
+    {"id": "HONDA_FLI_INPUT", "path": "Fuel", "fmt": {"bix": 232, "len": 8, "max": 100, "unit": "percent" }, "name": "Fuel level input", "suggestedMetric": "fuelTankLevel"}
+  ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2580"}, "freq": 60,
   "signals": [
     {"id": "HONDA_RAW_10_2580", "path": "ECU", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw first byte of 10 22 2580", "description": "Captured to learn this reply's layout. Its listed contents: DPF Regeneration; DPF related parameter state."}
@@ -835,6 +839,14 @@
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "E82C"}, "freq": 60,
   "signals": [
     {"id": "HONDA_RAW_10_E82C", "path": "ECU", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Raw first byte of 10 22 E82C", "description": "Captured to learn this reply's layout. Its listed contents: AD Inhibit Status."}
+  ]},
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "F40D"}, "freq": 1,
+  "signals": [
+    {"id": "HONDA_VSS_F4", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed, mirrored read", "suggestedMetric": "speed"}
+  ]},
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "F42F"}, "freq": 1,
+  "signals": [
+    {"id": "HONDA_FLI_F4", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel level, mirrored read", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "FD00"}, "freq": 60,
   "signals": [
