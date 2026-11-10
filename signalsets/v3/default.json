@@ -1144,7 +1144,22 @@
   ]},
 { "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.25,
   "signals": [
-    {"id": "HONDA_GEAR_DA1E", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
+    {"id": "HONDA_GEAR_DA1E", "path": "Transmission", "name": "Transmission gear", "suggestedMetric": "gearSelector", "fmt": {"bix": 160, "len": 8, "map": {
+          "0":  { "description": "Park",                "value": "PARK" },
+          "1":  { "description": "Drive, first gear",   "value": "D1" },
+          "2":  { "description": "Drive, second gear",  "value": "D2" },
+          "3":  { "description": "Drive, third gear",   "value": "D3" },
+          "4":  { "description": "Drive, fourth gear",  "value": "D4" },
+          "5":  { "description": "Drive, fifth gear",   "value": "D5" },
+          "6":  { "description": "Drive, sixth gear",   "value": "D6" },
+          "7":  { "description": "Drive, seventh gear", "value": "D7" },
+          "8":  { "description": "Drive, eighth gear",  "value": "D8" },
+          "9":  { "description": "Drive, ninth gear",   "value": "D9" },
+          "14": { "description": "Neutral",             "value": "NEUTRAL" },
+          "15": { "description": "Reverse",             "value": "REVERSE" }
+        }}
+    },
+    {"id": "HONDA_GEAR_V2", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
           "1":  { "description": "Drive 1", "value": "D1" },
           "2":  { "description": "Drive 2", "value": "D2" },
