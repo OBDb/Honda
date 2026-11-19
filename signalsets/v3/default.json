@@ -5,14 +5,16 @@
     { "hdr": "DA11", "type": "engine" },
     { "hdr": "DA15", "type": "charger" },
     { "hdr": "DA16", "type": "battery" },
-    { "hdr": "DA1D", "type": "transmission" },
+    { "hdr": "DA17", "type": "motor" },
     { "hdr": "DA1E", "type": "transmission" },
     { "hdr": "DA26", "type": "tpms" },
     { "hdr": "DA28", "type": "abs" },
     { "hdr": "DA2A", "type": "abs" },
     { "hdr": "DA30", "type": "steering" },
+    { "hdr": "DA40", "type": "bodyControl" },
     { "hdr": "DA53", "type": "airbag" },
-    { "hdr": "DA60", "type": "cluster" }
+    { "hdr": "DA60", "type": "cluster" },
+    { "hdr": "DACB", "type": "battery" }
   ],
   "commands": [
 { "hdr": "DA01", "rax": "01", "dbg": true, "cmd": {"22": "2028"}, "freq": 1,
